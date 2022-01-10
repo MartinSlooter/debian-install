@@ -17,3 +17,6 @@ sudo virsh net-list --all
 #Add User to libvirt to Allow Access to VMs
 sudo adduser $user libvirt
 sudo adduser $user libvirt-qemu
+
+
+#source: https://www.christitus.com/vm-setup-in-linux
