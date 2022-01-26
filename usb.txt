@@ -1,0 +1,22 @@
+
+
+    Do # lsusb -vt to get your USB device ID:
+
+    λ ~> sudo lsusb -vt
+    /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/6p, 5000M
+    ID 1d6b:0003 Linux Foundation 3.0 root hub
+    /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/12p, 480M
+    ID 1d6b:0002 Linux Foundation 2.0 root hub
+    |__ Port 5: Dev 2, If 0, Class=Wireless, Driver=btusb, 12M
+        ID 0cf3:e500 Qualcomm Atheros Communications 
+    |__ Port 5: Dev 2, If 1, Class=Wireless, Driver=btusb, 12M
+        ID 0cf3:e500 Qualcomm Atheros Communications 
+
+    Create a /etc/udev/rules.d/50-usb_power_save.rules file if you don't have it already
+
+    Append to the end of this file: (replace the idVendor and idProduct with yours, see the example above)
+
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0cf3", 
+    ATTR{idProduct}=="e500", ATTR{power/autosuspend}="-1"
+
+    Reboot
