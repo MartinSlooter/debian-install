@@ -1,0 +1,1 @@
+sudo apt install xorg lightdm lightdm-gtk-greeter bspwm sxhkd polybar rofi rxvt-unicode git nitrogen dex dunst picom firefox-esr pulseaudio alsa-utils lxappearance vim arandr thunar gvfs gvfs-backends 
